@@ -5,7 +5,9 @@ READ THIS BEFORE USING:
 This machine learning model uses a ResNet-18 algorithm along with a CNN (Convolutional Neural Network) in order to determine whether an image is of plastic or of paper. This can be used to automate sorting, or to help somebody know what can be recycled or not. The dataset is a collection of various images found on the internet. The data is split into three folders/categories: train, val (validate), and test. The train folder is what the model uses to learn, the val folder helps validate the model's accuracy, and the test folder contains images that can be used to test the model's accuracy. This project is intended for use with python, and specifically on an NVIDIA Jetson Nano. To run, all files in the repository must be downloaded and saved on a linux machine. Once you are in the folder continting the files on the linux machine, run these commands: 
 
 NET=models/SmartWasteManagement
+
 DATASET=data/SmartWasteManagement
+
 imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/test/file.jpg output.jpg
 
 -----
